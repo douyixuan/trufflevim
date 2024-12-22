@@ -1,12 +1,12 @@
 package com.example.trufflevim;
 
 import org.graalvm.polyglot.Context;
-import org.graalvm.polyglot.Language;
+import com.oracle.truffle.api.TruffleLanguage;
 import org.graalvm.polyglot.Source;
 import org.graalvm.polyglot.Value;
 
 @Language.Registration(id = "vim", name = "Vimscript", version = "1.0", mimeType = "application/x-vimscript")
-public class TruffleVimLanguage extends Language {
+public class TruffleVimLanguage extends TruffleLanguage<Object> {
 
     @Override
     protected Object parse(ParsingRequest request) throws Exception {
